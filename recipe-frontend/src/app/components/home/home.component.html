@@ -1,0 +1,66 @@
+<div class="home">
+  <div class="home-background">
+    <div class="home-header">
+      <div class="blog-name">
+        <h3>BLOG Recipes</h3>
+      </div>
+      <div class="home-header-nav">
+        <nav class="navbar">
+          <a class="icon" (click)="makeDropdown()">&#9776;</a>
+          <ul class="nav-item" id="nav">
+            <li class="nav-item-list">
+              <a routerLink="/home" routerLinkActive="active-route" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item-list">
+              <a routerLink="/recipes" routerLinkActive="active-route" class="nav-link">Recipes</a>
+            </li>
+            <li class="nav-item-list">
+              <a class="nav-link">Category</a>
+              <ul class="file-menu" *ngFor="let cat of categories">
+                <li><a href="/home/{{cat.name}}">{{cat.name}}</a></li>
+              </ul>
+            </li>
+            <li class="nav-item-list">
+              <a routerLink="/#" routerLinkActive="active-route" class="nav-link">Informations</a>
+            </li>
+            <li class="nav-item-list">
+              <a routerLink="/#" routerLinkActive="active-route" class="nav-link">Seasons</a>
+            </li>
+            <li class="nav-item-list">
+              <a routerLink="/#" routerLinkActive="active-route" class="nav-link">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="home-body">
+      <div class="search-title">
+        <h3>ARE YOU LOOKING FOR A RECIPE?</h3>
+      </div>
+      <div class="form-inline md-form  mb-4">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search for a recipe..." aria-label="Search"
+          [(ngModel)]="title">
+        <button mdbBtn size="sm" (click)="searchByTitle()" color="warning" outline="true" rounded="true"
+          class="my-0 waves-light" mdbWavesEffect>Search</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="results">
+  <h1 id="title-search"> Search results for "{{title}}"</h1>
+  <div class="search-results">
+    <div class="card-inner" *ngFor="let r of recipes">
+      <div class="card-front">
+        <img src="assets/images/{{r.image}}" alt="Content not found">
+        <h1>{{r.name}}</h1>
+      </div>
+      <div class="card-back">
+        <p class="search-description">{{r.description}}</p>
+        <p class="category"> CATEGORY: &nbsp; {{  r.cat_name}}</p>
+      <a routerLink="/home/detail/{{r.id}}"><button mdbBtn size="sm" color="warning" outline="true" rounded="true"
+        class="my-0 waves-light" mdbWavesEffect>Read More </button></a>
+      </div>
+    </div>
+  </div>
+</div>

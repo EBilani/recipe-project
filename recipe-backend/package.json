@@ -1,0 +1,28 @@
+{
+  "name": "recipe-backend",
+  "version": "1.0.0",
+  "description": "An simple app with node.js angular",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "rest",
+    "api"
+  ],
+  "author": "Esterina",
+  "license": "ISC",
+  "dependencies": {
+    "ansi-colors": "^4.1.1",
+    "body-parser": "^1.19.0",
+    "connect-multiparty": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.9",
+    "mongoose-morgan": "^1.0.13",
+    "multer": "^1.4.2"
+  }
+}

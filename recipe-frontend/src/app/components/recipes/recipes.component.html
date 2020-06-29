@@ -1,0 +1,23 @@
+<div>
+  <h4>
+    Recipe List
+  </h4>
+
+  <ul  *ngFor="let recipe of recipes">
+    <li >
+      {{ recipe.name }}
+    </li>
+    <li >
+      {{ recipe.description }}
+    </li>
+    <li >
+        {{ recipe.cat_name }}
+      </li>
+      <li >
+          {{ recipe.ingrediends }}
+        </li>
+    <li >
+    <img src="assets/images/{{recipe.image}}" alt="h">
+    </li>
+  </ul>
+</div>

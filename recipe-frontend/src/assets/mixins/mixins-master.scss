@@ -1,0 +1,34 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue) {
+  font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+//Breakpoints
+@mixin breakpoint($point) {
+  @if not map-has-key($breakpoints, $point) {
+    @warn "You have provided a wrong breakpoint: #{$point}";
+  } @else {
+    @media (map-get($breakpoints, $point)) {
+      @content;
+    }
+  }
+}
+
+//Create flex
+@mixin flex-container($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+//Create grid
+@mixin create-grid($repeat) {
+  display: grid;
+  grid-template-columns: repeat($repeat, 1fr);
+}
